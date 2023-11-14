@@ -1,0 +1,7 @@
+keys		probability
+Albert		0.4
+Brown		0.05
+Christine	0.15
+Jacobson	0.12
+James		0.15
+Walter		0.13
