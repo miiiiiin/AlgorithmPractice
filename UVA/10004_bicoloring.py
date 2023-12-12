@@ -6,14 +6,14 @@ def main():
     while True:
         # 정점의 개수
         n = int(input())
+	if n == 0:
+		break
         # 간선의 개수
         m = int(input())
 
         graph = [[0] * n for _ in range(n)]
         # 정점의 색 나타내는 리스트 초기화
         color = [-1] * n
-
-        visited = True
 
         for i in range(m):
             # 각 간선으로 이어지는 정점의 쌍
@@ -32,6 +32,8 @@ def main():
             u = q.popleft()
 
             for v in range(n):
+		if not graph[u][v]:
+			continue
 
                 # 색 아직 안칠한 경우
                 if color[v] == -1:
