@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.nio.Buffer;
 import java.util.StringTokenizer;
 
-// 정수 삼각형
+// 정수 삼각형 (dfs로 하면 시간 초과)
 public class BOJ1932_dfs {
     static int n;
     static int [][] map;

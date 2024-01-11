@@ -35,6 +35,5 @@ public class TopDown1 {
 
         return D[n] = fibo(n-2) + fibo(n-1);
         // 메모이제이션: 구한 값을 바로 리턴하지 않고 DP 테이블에 저장한 후 리턴하도록 로직 구현
-
     }
 }
