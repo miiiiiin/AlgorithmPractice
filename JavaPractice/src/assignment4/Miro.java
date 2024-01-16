@@ -2,6 +2,7 @@ package assignment4;
 
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -60,10 +61,16 @@ public class Miro {
                 break;
             }
 
-            String[] boxes = line.split(" ");
+            String[] boxes = line.split("");
             for (int col = 0; col < boxes.length; col++) {
                 arr[row][col] = Integer.parseInt(boxes[col]);
+
+//                System.out.println(arr[row][col]);
             }
+
+//            System.out.println(Arrays.toString(boxes));
+//            System.out.println(Arrays.toString(arr));
+
 
             row++;
         }
