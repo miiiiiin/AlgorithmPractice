@@ -42,7 +42,6 @@ public class BOJ13305 {
         // 최소 비용 초기화
         long min_cost = costs[0];
 
-
         for (int i=0; i<n-1; i++) {
             // 현재까지의 최소 주유비 갱신 (현재 주유소가 이전 주유소보다 쌀 경우 최소비용 갱신)
 
@@ -53,7 +52,6 @@ public class BOJ13305 {
             // 최소 주유비로 이동하는 비용 계산
             total_min_cost += (min_cost * distances[i]);
         }
-
         System.out.println(total_min_cost);
     }
 }
