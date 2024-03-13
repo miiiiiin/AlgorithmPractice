@@ -36,7 +36,7 @@ public class MatrixPractice {
 
         System.out.println(("n size:" + n));
         for (int len = 2; len <= n; len++) {
-            System.out.println(("n-len size:" + (n - len)));
+//            System.out.println(("n-len size:" + (n - len)));
             for (int i = 0; i < n - len + 1; i++) {
 //                구간의 끝점(j)은 시작점(i)과 길이(len)를 통해 계산
 

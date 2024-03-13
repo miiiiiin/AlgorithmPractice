@@ -49,7 +49,7 @@ public class BOJ2644_DFS2 {
         for (int i: graph.get(index)) {
             if (!visited[i]) {
                 if (i == end) {
-                    result = cnt;
+                    result = cnt+1;
                     return;
                 }
                 DFS(i, cnt+1);
