@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 public class BOJ11725 {
 
     static int N, n1, n2;
-//    static int[][] tree;
 
     static ArrayList<Integer>[] tree; // 트리 어레이리스트
     static boolean[] visited; // 방문 여부 저장 배열
@@ -59,12 +58,12 @@ public class BOJ11725 {
         System.out.println("trees:" + num + " " + Arrays.toString(tree) + " " + Arrays.toString(visited));
         // tree의 현재 노드들과 연결되어 있는 다른 노드들 순회
         for (int i: tree[num]) {
-            System.out.println("for:" + i + " " + tree[num] + " " + visited[num]);
 
             // 아직 방문하지 않은 노드들만 재귀적으로 이동
             if (!visited[i]) {
                 // 다음 노드로 가기 전 현재 노드를 다음 노드의 부모 노드로 저장
                 answers[i] = num;
+                System.out.println("for:" + i + " " + tree[num] + " " + visited[num]);
                 DFS(i);
             }
         }
