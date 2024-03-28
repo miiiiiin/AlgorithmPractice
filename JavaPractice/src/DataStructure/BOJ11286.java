@@ -3,7 +3,7 @@ package DataStructure;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.PriorityQueue;
+import java.util.*;
 
 // 연산의 개수 N(1≤N≤100,000)이 주어짐
 // 최대 범위가 100,0000이므로 시간 복잡도 : O(NlogN)
@@ -33,7 +33,7 @@ public class BOJ11286 {
             // 리턴값 음수/양수냐로 비교 정렬 기준 세움
         });
 
-        for (int i=0; i<=N; i++) {
+        for (int i=0; i<N; i++) {
             int x = Integer.parseInt(br.readLine());
             if (x == 0) {
                 if (queue.isEmpty())
