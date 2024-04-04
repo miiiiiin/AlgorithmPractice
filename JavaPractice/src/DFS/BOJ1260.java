@@ -26,7 +26,7 @@ public class BOJ1260 {
         dfsOrder = "";
         bfsOrder = "";
 
-        for (int i=1; i<m; i++) {
+        for (int i=1; i<=n; i++) {
             // 인접리스트 초기화
             arr[i] = new ArrayList<Integer>();
         }
@@ -37,6 +37,10 @@ public class BOJ1260 {
             int y = Integer.parseInt(st.nextToken());
             arr[x].add(y);
             arr[y].add(x);
+
+            // 오름차순 정렬
+            Collections.sort(arr[x]);
+            Collections.sort(arr[y]);
         }
 
 //        System.out.println(Arrays.toString(arr));
@@ -48,7 +52,6 @@ public class BOJ1260 {
 
     public static void DFS(int index) {
         dfsOrder += index + " ";
-        System.out.println(index);
         if (dfsVisited[index]) {
             return;
         }
@@ -60,22 +63,20 @@ public class BOJ1260 {
         }
     }
 
-    public static void BFS(int index) {
+    public static void BFS(int node) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(index);
-
+        queue.add(node);
+        bfsVisited[node] = true;
         while (!queue.isEmpty()) {
             int curr = queue.poll();
-//            System.out.println("curr check:" + curr + " " + arr[curr]);
-            bfsVisited[curr] = true;
             bfsOrder += curr + " ";
 
             for (int i: arr[curr]) {
-//                System.out.println("check i:" + i + " " + Arrays.toString(bfsVisited) + " " + bfsVisited[i] );
                 // 방문 조건 : 현재 노드와 다음 노드가 연결된 상태이고 아직 방문하지 않은 상태일 때
-                // 이미 방문하지 않은 경우 계속
-                if (bfsVisited[i]) break;
-                queue.add(i);
+                if (!bfsVisited[i]) {
+                    bfsVisited[i] = true;
+                    queue.add(i);
+                }
             }
         }
     }
