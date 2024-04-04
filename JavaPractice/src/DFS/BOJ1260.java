@@ -3,15 +3,15 @@ package DFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
-
 public class BOJ1260 {
-
     static int n, m, v;
-    static int[][] arr;
-    static int[] visited;
-
+    static ArrayList<Integer>[] arr;
+    static boolean[] visited;
+    static String dfsOrder;
+    static String bfsOrder;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -20,42 +20,44 @@ public class BOJ1260 {
         m = Integer.parseInt(st.nextToken());
         v = Integer.parseInt(st.nextToken());
 
-        arr = new int[m][m];
-        visited = new int[m];
+        arr = new ArrayList[n+1];
+        visited = new boolean[n+1];
+        dfsOrder = "";
+        bfsOrder = "";
+
+        for (int i=1; i<m; i++) {
+            // 인접리스트 초기화
+            arr[i] = new ArrayList<Integer>();
+        }
 
         for (int i=0; i<m; i++) {
-            System.out.println("i:" + i);
-
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            arr[x][y] = arr[y][x] = 1;
-
+            arr[x].add(y);
+            arr[y].add(x);
         }
 
+        System.out.println(Arrays.toString(arr));
         DFS(v);
+        System.out.println(dfsOrder);
     }
 
     public static void DFS(int index) {
-        if (index == n) {
+        dfsOrder += index + " ";
+        System.out.println(index);
+        if (visited[index]) {
             return;
         }
-
-        if (visited[index] == 1) {
-            return;
-        }
-
-        visited[index] = 1;
-
-        for (int i=1; i<=n; i++) {
-            System.out.println("arr check:" + Arrays.toString(arr[index]) + " " + i);
-            if (arr[index][i] == 1 && visited[i] == 0) {
-                // 방문 횟수 카운트 1씩 증가
-//                visited[i] = visited[i] + 1;
-
-                System.out.println("dfs visited:" + i + " " + Arrays.toString(visited));
+        visited[index] = true;
+        for (int i: arr[index]) {
+            if (!visited[i]) {
                 DFS(i);
             }
         }
+    }
+
+    public static void BFS(int index) {
+
     }
 }

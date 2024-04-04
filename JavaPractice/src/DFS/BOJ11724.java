@@ -54,6 +54,7 @@ public class BOJ11724 {
     }
 
     private static void dfs(int cur_node) {
+        System.out.println("first visited:" + cur_node);
         if (visited[cur_node]) {
             return;
         }
@@ -63,6 +64,9 @@ public class BOJ11724 {
         // 현재 노드에서 연결되어 있는 노드들을 모두 탐색
         for (int i : A[cur_node]) {
             // 탐색하지 않은 노드가 존재한다면 그를 기준/시작점으로 다시 dfs 실행
+
+            System.out.println("arr check:" + A[cur_node] + " " + i);
+            System.out.println("visited: " + i + " " + cur_node + " " + Arrays.toString(visited) + " " + cur_node);
             if (!visited[i]) {
                 dfs(i);
             }
