@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 
@@ -22,6 +23,8 @@ public class BOJ2644_DFS2 {
 
         for (int i = 0; i <= n; i++) graph.add(new ArrayList<>());
 
+        System.out.println("Arrays.toString(graph.toArray())333 = " + Arrays.toString(graph.toArray()));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         start = Integer.parseInt(st.nextToken());
@@ -37,6 +40,9 @@ public class BOJ2644_DFS2 {
             // 양방향 그래프 연결
             graph.get(x).add(y);
             graph.get(y).add(x);
+
+
+            System.out.println("Arrays.toString(graph.toArray())333 = " + Arrays.toString(graph.toArray()));
         }
 
         DFS(start, 0);
