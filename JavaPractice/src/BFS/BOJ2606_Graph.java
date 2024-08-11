@@ -1,11 +1,11 @@
-package DFS;
+package BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ2606 {
+public class BOJ2606_Graph {
 
     static int n, m, result;
     static boolean[] visited;
@@ -44,14 +44,14 @@ public class BOJ2606 {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(index);
         visited[index] = true;
-//        System.out.println("index = " + index);
+        //        System.out.println("index = " + index);
         while (!queue.isEmpty()) {
             int curr = queue.poll();
-//            System.out.println("curr = " + curr);
+            //            System.out.println("curr = " + curr);
             for (int i: graph.get(curr)) {
                 if (!visited[i]) {
                     queue.add(i);
-//                    System.out.println("i = " + i);
+                    //                    System.out.println("i = " + i);
                     visited[i] = true;
                     result += 1;
                 }
