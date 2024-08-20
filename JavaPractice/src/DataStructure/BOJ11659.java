@@ -6,9 +6,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BOJ11659 {
-
-    static int[] numbers;
-    static int[] sumArr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -19,8 +16,6 @@ public class BOJ11659 {
         // 덧셈이나 곱셈이 많을 때 int 형 수 범위를 넘어가는 경우가 많아서 long형으로 선언
         // 합배열
         long[] sum = new long[n+1];
-        numbers = new int[n];
-        sumArr = new int[n];
 
         st = new StringTokenizer(br.readLine());
         // n 개의 수
