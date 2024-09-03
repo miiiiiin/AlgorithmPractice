@@ -19,7 +19,7 @@ public class BOJ10986 {
         // 합배열
         long[] sum = new long[n];
         // 나머지 배열
-        long[] count = new long[n];
+        long[] count = new long[m];
 
         st = new StringTokenizer(br.readLine());
         sum[0] = Integer.parseInt(st.nextToken());
