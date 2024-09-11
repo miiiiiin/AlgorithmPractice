@@ -20,7 +20,7 @@ public class BOJ11659 {
         st = new StringTokenizer(br.readLine());
         // n 개의 수
         for (int i=1; i<=n; i++) {
-            // 합배열
+            // 합배열 생성
             sum[i] = sum[i-1] + Integer.parseInt(st.nextToken());
 //            System.out.println(Arrays.toString(sum));
         }
@@ -32,6 +32,7 @@ public class BOJ11659 {
             int j = Integer.parseInt(st.nextToken());
 
 //            System.out.println("sumarr:" + Arrays.toString(sum) + " " + sum[j] + " " + sum[i-1]);
+            // 구간 합 출력
             System.out.println(sum[j] - sum[i-1]);
         }
     }
