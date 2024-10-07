@@ -21,6 +21,7 @@ public class BOJ1929 {
             for (int j=i+i; j<=n; j=j+i) { // 배수 지우기
                 arr[j] = 0;
             }
+//            System.out.println("Arrays.toString(arr) = " + Arrays.toString(arr));
         }
         for (int i=m; i<=n; i++) {
             if (arr[i] != 0) {
