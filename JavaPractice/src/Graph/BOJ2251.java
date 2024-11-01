@@ -1,2 +1,4 @@
-package Graph;public class BOJ2251 {
+package Graph;
+
+public class BOJ2251 {
 }
