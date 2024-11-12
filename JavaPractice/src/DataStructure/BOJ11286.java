@@ -24,7 +24,7 @@ public class BOJ11286 {
             int first_abs = Math.abs(n1);
             int second_abs = Math.abs(n2);
 
-            // 절대값 같을 경우 음수 우선
+            // 절대값 같을 경우 음수 우선 정렬
             if (first_abs == second_abs)
                 return n1 > n2 ? 1 : -1;
 
