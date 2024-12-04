@@ -11,7 +11,6 @@ import java.util.Scanner;
  *  1.3 정답 리스트 배열 : 모든 정점의 최단 거리를 무한대로 초기화
  *  1.4 간선 리스트 배열 : 간선은 Edge 객체로 표현되며, 이는 start(시작 정점), end(도착 정점), weight(가중치) 정보를 포함
  *
- *
  *  2. 벨만 포드 알고리즘 수행
  *  2.1 그래프의 최단 경로를 계산하면서 음수 가중치 사이클을 탐지
  *  2.2 시작 정점의 거리를 0으로 설정 D[1] = 0
@@ -34,7 +33,6 @@ import java.util.Scanner;
  */
 
 public class AS_TIMEWHIRL {
-
     // 정답 배열
     static int[] D;
     // 에지 리스트 배열
@@ -53,6 +51,7 @@ public class AS_TIMEWHIRL {
         Arrays.fill(D, Integer.MAX_VALUE);
 
         for (int i=0; i<E; i++) {
+
             int u = sc.nextInt();
             int v = sc.nextInt();
             // 간선 가중치 (음수일 수도 있음)
