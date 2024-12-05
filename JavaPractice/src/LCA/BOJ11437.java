@@ -1,4 +1,4 @@
-package LCS;
+package LCA;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -53,6 +53,7 @@ public class BOJ11437 {
 
     private static int LCA(int i, int j) {
         if (depth[i] < depth[j]) {
+            // i와 j를 맞추기 위해 서로 교환
             int temp = i;
             i = j;
             j = temp;
@@ -60,10 +61,12 @@ public class BOJ11437 {
 
         // 두 노드의 depth 맞추기
         while (depth[i] != depth[j]) {
+            // i의 부모 노드로 이동하여 depth 맞추기
             i = parent[i];
         }
 
         // 같은 조상 나올 때까지 부모 노드 한 칸씩 올림
+        // i와 j가 같아질 때까지 부모 노드로 이동
         while (i != j) {
             i = parent[i];
             j = parent[j];
@@ -78,7 +81,9 @@ public class BOJ11437 {
 
         // depth 레벨
         int level = 1;
+        // 깊이 크기
         int now_size = 1;
+        // 트리의 방문 수
         int count = 0;
 
         while (!queue.isEmpty()) {
@@ -97,7 +102,9 @@ public class BOJ11437 {
             count++;
             // 이번 높이에 해당하는 모든 노드를 방문했을 때
             if (count == now_size) {
+                // 트리 방문 수 0으로 초기화
                 count = 0;
+                // 깊이 크기를 현재 큐의 크기로 초기화
                 now_size = queue.size();
                 // 현재 배열의 depth 1씩 증가
                 level++;
