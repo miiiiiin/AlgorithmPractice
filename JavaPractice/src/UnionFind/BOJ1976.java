@@ -42,9 +42,14 @@ public class BOJ1976 {
             }
         }
 
+
+        // route 배열의 대표 노드가 모두 같은지 확인하고 결과 출력
+        // 여행 계획 도시들이 1개의 대표 도시로 연결돼 있는지 확인
+        // route에 포함되는 노드들의 대표 노드가 모두 동일한지 확인 후 결괏값 출력
         // 여행 계획 도시들이 1개의 대표 도시로 연결돼 있는지 확인
         int rootCity = find(tripRoute[1]);
         for (int i=2; i<tripRoute.length; i++) {
+            // find(tripRoute[i]) : 루트 배열 value를 통해 대표 노드 찾는 함수
             if (rootCity != find(tripRoute[i])) {
                 System.out.println("NO");
                 return;

@@ -29,6 +29,7 @@ public class BOJ2252 {
             int S = sc.nextInt();
             int E = sc.nextInt();
 
+
             // 노드에 에지 연결
             arr.get(S).add(E);
             // 진입 차수 배열 저장

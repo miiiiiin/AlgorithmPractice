@@ -10,6 +10,7 @@ public class BOJ1717 {
         // 입력으로 주어지는 연산의 개수
         int m = sc.nextInt();
         // 대표 노드 저장하는 배열
+        // N이 만약 7이 들어오면 7이라는 노드도 생기기 때문
         parent = new int[n+1];
 
         for (int i=0; i<=n; i++) {
@@ -46,11 +47,13 @@ public class BOJ1717 {
     }
 
     public static int find(int a) {
+        // index값과 value 노드 값이 같으면
         if (a == parent[a]) {
             return a;
         } else {
             // 경로 압축 (재귀 함수 형태)
-            return parent[a] = find(parent[a]);
+            // 빠져나올 때의 값을 그 때의 대표 노드 값으로 업데이트 해주는 것 (경로 압축)
+            return parent[a] = find(parent[a]); // value를 index로 해서 또 찾아보기
         }
     }
 
