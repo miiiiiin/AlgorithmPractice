@@ -80,6 +80,7 @@ public class BOJ1753 {
                     pq.add(new Edge(next, distance[next]));
                 }
             }
+
         }
         for (int i=1; i<=V; i++) {
             if (visited[i]) {
