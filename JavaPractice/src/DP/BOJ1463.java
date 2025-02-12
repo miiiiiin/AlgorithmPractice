@@ -17,20 +17,28 @@ import java.util.Scanner;
 
 public class BOJ1463 {
 
+    static int[] arr;
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int N = sc.nextInt();
-//
-//        // 연산 횟수 최소값을 저장하는 DP 테이블
-//        int D[] = new int[];
-//        // D[1] = 1이 될 떄까지 필요한 연산 횟수 (이미 1이니까 1이 될 때까지 연산 불필요 그래서 D[1] = 0)
-//        D[1] = 0;
-//
-//        for (int i=2; i<=N; i++) {
-//
-//        }
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
 
+        arr = new int[N+1];
+        // arr[1] = 1이 될 떄까지 필요한 연산 횟수 (이미 1이니까 1이 될 때까지 연산 불필요 그래서 arr[1] = 0)
+        arr[1] = 0;
 
+        for (int i=2; i<=N; i++) {
+            // 1을 빼는 연산
+            arr[i] = arr[i-1] + 1;
+            // 2로 나누는 연산과 비교하여 최솟값 갱신
+            if (i%2 == 0) {
+                arr[i] = Math.min(arr[i], arr[i/2] + 1);
+            }
+            if (i%3 == 0) {
+                arr[i] = Math.min(arr[i], arr[i/3] + 1);
+            }
+        }
+
+        System.out.println(arr[N]);
 
     }
 }
