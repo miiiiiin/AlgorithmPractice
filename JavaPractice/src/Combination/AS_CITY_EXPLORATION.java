@@ -1,4 +1,4 @@
-package MST;
+package Combination;
 
 import java.io.*;
 import java.util.*;
